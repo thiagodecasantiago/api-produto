@@ -76,6 +76,8 @@ jobs:
           cluster_name: ${{ env.GKE_CLUSTER }}
           # Location (Region/Zone) for the cluster.
           location: ${{ env.GKE_ZONE }}
+          # Project ID where the cluster is deployed. If provided, this will override the project configured by gcloud.
+          project_id: ${{ secrets.GKE_PROJECT }}
  
       - name: Deploy MongoDB 
         uses: Azure/k8s-deploy@v1.3
